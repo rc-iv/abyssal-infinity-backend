@@ -1,0 +1,5 @@
+/.aws-sam/
+/node_modules/
+/.env
+/lambda/.env
+/lambda/package-lock.json

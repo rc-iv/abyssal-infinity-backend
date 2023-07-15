@@ -1,0 +1,23 @@
+{
+  "name": "eternal-depths-backend",
+  "version": "1.0.0",
+  "description": "Backend for the Abyssal Infinity application, running on AWS Lambda with SAM",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "aws",
+    "lambda",
+    "sam",
+    "backend"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-apigatewaymanagementapi": "^3.369.0",
+    "aws-sdk": "^2.1415.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

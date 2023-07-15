@@ -1,0 +1,109 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS Serverless Application that uses an API Gateway Websockets to connect and disconnect.
+
+Resources:
+  ConnectLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/ConnectLambdaFunction
+      Handler: connect.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+
+  DisconnectLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/DisconnectLambdaFunction
+      Handler: disconnect.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+
+  DefaultLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/DefaultLambdaFunction
+      Handler: default.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+
+  NewGameLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/NewGameLambdaFunction
+      Handler: newGame.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 120
+
+  MoveLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/MoveLambdaFunction
+      Handler: move.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 120
+
+  NextLevelLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/NextLevelLambdaFunction
+      Handler: nextLevel.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 120
+
+  AttackLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/AttackLambdaFunction
+      Handler: attack.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 120
+
+  EquipItemLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/EquipItemLambdaFunction
+      Handler: equipItem.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 120
+
+  PackItemLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/PackItemLambdaFunction
+      Handler: packItem.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 120
+
+  BuyLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/BuyLambdaFunction
+      Handler: buy.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 120
+
+  SellLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/SellLambdaFunction
+      Handler: sell.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 120
+
+  HealLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/HealLambdaFunction
+      Handler: heal.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 120
