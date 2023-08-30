@@ -1,8 +1,8 @@
 {
-  "name": "attack-lambda-function",
+  "name": "load-user-lambda-function",
   "version": "1.0.0",
   "description": "",
-  "main": "attack.js",
+  "main": "loadUser.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

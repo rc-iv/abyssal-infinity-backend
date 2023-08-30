@@ -107,3 +107,12 @@ Resources:
       Runtime: nodejs14.x
       Policies: AWSLambdaBasicExecutionRole
       Timeout: 120
+
+  LoadUserLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: lambda/LoadUserLambdaFunction
+      Handler: loadUser.handler
+      Runtime: nodejs14.x
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 120

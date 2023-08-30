@@ -1,5 +1,6 @@
 const sendMessage = require('./messaging');
 const {combat_simulation} = require("./combat");
+const {saveGameState} = require("../shared/dbWrite");
 
 
 exports.handler = async (event) => {
@@ -20,8 +21,9 @@ exports.handler = async (event) => {
 async function attackMonster(data) {
     console.log(`Attacking monster. Data: ${data}`);
     let player = data.player;
+    let userId = data.userId;
     const monsterId = parseInt(data.monsterId);
-    if (!player || isNaN(monsterId)) {
+    if (!player || isNaN(monsterId) || !userId) {
         return {status: 400, message: 'Missing parameters for attack.'};
     }
 
@@ -40,12 +42,14 @@ async function attackMonster(data) {
     player = combat_simulation(player, monsterId);
 
     if (!player.is_alive) {
+        await saveGameState(userId, player);
         return {
             status: 200,
             message: 'Game Over',
             last_level_cleared: game.dungeon_level - 1,
             combat_log: game.combat_log[combat_id].combat_messages
         };
+
     }
     player.current_game.combat_just_ended = true;
     return player;
